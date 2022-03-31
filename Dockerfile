@@ -8,10 +8,10 @@ RUN R -e "options(repos = \
 	install.packages(dplyr);\
 	install.packages(haven)"
 
-mkdir
-
-Copy cash_flow_data.dta /home/data/cash_flow_data.dta
-Copy cash_flow_reg_data.dta /home/data/cash_flow_reg_data.dta
-
-Copy economic_similarity.R /home/code/economic_similarity.R
-CMD R -e "source('/home/code/economic_similarity.R')"
+mkdir data
+mkdir data/idx
+Copy gs://china-financial-data/cash_flow_data.dta /data/cash_flow_data.dta
+Copy gs://china-financial-data/cash_flow_reg_data.dta /data/cash_flow_reg_data.dta
+Copy gs://china-financial-data/indexes/indx_perm_1_1_group.csv /data/idx/idx_file.csv
+Copy rscript.R rscript.R
+CMD R -e "source('rscript.R')"
