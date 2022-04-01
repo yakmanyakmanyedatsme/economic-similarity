@@ -7,10 +7,8 @@ spec:
   - name: economic-similarity-cash-flows
     image: gcr.io/kaniko-project/executor:debug
     args: [ "--context=git://github.com/yakmanyakmanyedatsme/economic-similarity",
-            "--destination=yakmanyakmanyedatsme/economic-similarity-cash-flows:1.0.0"] # replace with your dockerhub account
-    env:
-      -name: WHEN
-       value: 2022-04-01
+            "--destination=yakmanyakmanyedatsme/economic-similarity-cash-flows:1.0.0",
+            "--WHEN=2022-04-01"] # replace with your dockerhub account
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
