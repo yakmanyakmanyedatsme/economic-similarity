@@ -4,15 +4,18 @@ metadata:
   name: kaniko
 spec:
   containers:
-  - name: economic_similarity_cash_flows
+  - name: economic-similarity-cash-flows
     image: gcr.io/kaniko-project/executor:debug
-    args: [ "--context=git://github.com//yakmanyakmanyedatsme/economic-similarity",
-            "--destination=yakmanyakmanyedatsme/economic_similarity_cash_flows:1.0.0"] # replace with your dockerhub account
+    args: [ "--context=git://github.com/yakmanyakmanyedatsme/economic-similarity",
+            "--destination=yakmanyakmanyedatsme/economic-similarity-cash-flows:1.0.0"] # replace with your dockerhub account
+    env:
+      -name: WHEN
+       value: 2022-04-01
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
       - name: dockerfile-storage
-        mountPath: /workspace
+        mountPath: /test-pd
   restartPolicy: Never
   volumes:
     - name: kaniko-secret
