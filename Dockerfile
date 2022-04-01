@@ -1,10 +1,10 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
-RUN R -e "options(repos = \
-	list(CRAN='http://mran.revolutionanalytics.com/snapshot/${WHEN}')); \
-	install.packages(tidyverse);\
-	install.packages(data.table);\
-	install.packages(dplyr);\
+RUN R -e "options(repos = `
+	list(CRAN='http://mran.revolutionanalytics.com/snapshot/${WHEN}')); `
+	install.packages(tidyverse);`
+	install.packages(data.table);`
+	install.packages(dplyr);`
 	install.packages(haven)"
 
 RUN mkdir data
