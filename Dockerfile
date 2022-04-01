@@ -4,7 +4,7 @@ FROM nuest/mro
 ARG WHEN
 
 RUN R -e "options(repos = `
-	list(CRAN='http://mran.revolutionanalytics.com/snapshot/$(WHEN)')); `
+	list(CRAN='http://mran.revolutionanalytics.com/snapshot/${WHEN}')); `
 	install.packages(tidyverse);`
 	install.packages(data.table);`
 	install.packages(dplyr);`
