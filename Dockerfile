@@ -1,8 +1,6 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
 
-ARG WHEN
-
 RUN R -e "options(repos = `
 	list(CRAN='http://mran.revolutionanalytics.com/snapshot/$(WHEN)')); `
 	install.packages(tidyverse);`
