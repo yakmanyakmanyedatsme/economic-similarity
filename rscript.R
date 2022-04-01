@@ -3,7 +3,7 @@ df <- read_dta("cash_flow_reg_data.dta")
 dfcsmar <- read_dta("cash_flow_data.dta")
 df <- dfcsmar[which(dfcsmar$stkcd %in% unique(df$stkcd)),]
 df <- within(df, yearqtr <- paste(year,quarter,sep="_"))
-stkcd <- fread("indx_perm_1_1_group.csv")
+stkcd <- fread("/idx/file.csv")
 full_R2 <- data.frame()
 df_list <- list()
     for(j in 1:dim(stkcd)[1]){
