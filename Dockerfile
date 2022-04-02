@@ -8,9 +8,9 @@ RUN R -e "install.packages('haven')"
 
 RUN mkdir data
 RUN mkdir data/idx
-COPY gs://china-financial-data/cash_flow_data.dta /data/cash_flow_data.dta
-COPY gs://china-financial-data/cash_flow_reg_data.dta /data/cash_flow_reg_data.dta
-COPY gs://china-financial-data/indexes/indx_perm_1_1_group.csv /data/idx/idx_file.csv
+RUN gsutil cp gs://china-financial-data/cash_flow_data.dta /data/
+RUN gsutil cp gs://china-financial-data/cash_flow_reg_data.dta /data/
+RUN gsutil cp gs://china-financial-data/indexes/indx_perm_1_1_group.csv /data/
 COPY rscript.R rscript.R
 CMD R -e "source('rscript.R')"
-COPY /data/R2_cash_flow.csv gs://china-financial-data/
+RUN gsutil cp /data/R2_cash_flow.csv gs://china-financial-data/kaniko/
