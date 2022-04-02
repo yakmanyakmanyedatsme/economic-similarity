@@ -15,7 +15,7 @@ spec:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
       - name: dockerfile-storage
-        mountPath: /test-pd
+        mountPath: /economic-similarity/
   restartPolicy: Never
   volumes:
     - name: kaniko-secret
