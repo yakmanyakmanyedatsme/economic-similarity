@@ -16,10 +16,10 @@ RUN mkdir -p /usr/local/gcloud \
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-RUN echo {
-  "type": "service_account",
-  "project_id": "quantum-ether-337220",
-  "private_key_id": "de8051e4aa9572db455b6936479e7ca26991ddbe",
+RUN echo {\
+  "type": "service_account",\
+  "project_id": "quantum-ether-337220",\
+  "private_key_id": "de8051e4aa9572db455b6936479e7ca26991ddbe",\
   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCtlySCYxpnIvCY\nu21ROIreDtdh+YP1nTCJDT0mwkMqBYbdl2R3f0Anm/\
   bEx6+plY4aVeXzurF4BCHX\njf/R12XFYi1NCdSnUVzdWKjKic5PNn4YmabRP4eaFsvNYlLMSrScBn6xWuoS9puN\nnSmyuXVQEvc7o0GrnkKln/E31FzDNxRZr7buTfX7UuXgKWt7Wqnx9LYjfJ6ZYMUt\nVKNKxrqSFuQ2OYJbYhi/\
   OT/6RK4wi9b/INlz5PulVFeK6YwHmakLUPNtUXTGRIvo\nkyY29RylrFlzrF5Uh6NqaqFWy9ZtuuzyHYbcLa/Mgos1AKhGG9maJPdkNVR4cpBg\nbGo37XdbAgMBAAECggEARuZuJ4ExxgE70q3uytc0xNi7+MzQLG/\
