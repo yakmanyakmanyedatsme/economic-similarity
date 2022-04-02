@@ -1,10 +1,10 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
 
-RUN R -e install.packages(tidyverse)
-RUN R -e install.packages(data.table)
-RUN R -e install.packages(dplyr)
-RUN R -e install.packages(haven)
+RUN R "install.packages(tidyverse)"
+RUN R "install.packages(data.table)"
+RUN R "install.packages(dplyr)"
+RUN R "install.packages(haven)"
 
 RUN mkdir data
 RUN mkdir data/idx
