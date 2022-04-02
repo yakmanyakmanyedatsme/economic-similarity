@@ -1,10 +1,10 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
 
-ARG WHEN
+#ARG WHEN
 
 RUN R -e "options(repos = `
-	list(CRAN='http://mran.revolutionanalytics.com/snapshot/${WHEN}')); `
+	list(CRAN='http://mran.revolutionanalytics.com/snapshot/2022-04-01')); `
 	install.packages(tidyverse);`
 	install.packages(data.table);`
 	install.packages(dplyr);`
