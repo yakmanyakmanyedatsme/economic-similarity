@@ -1,9 +1,9 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
 
-RUN sudo apt-get update -y
+RUN apt-get update -y
 
-RUN sudo apt-get install -y python
+RUN apt-get install -y python
 
 # Downloading gcloud package
 RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
