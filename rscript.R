@@ -4,6 +4,7 @@ dfcsmar <- read_dta("cash_flow_data.dta")
 df <- dfcsmar[which(dfcsmar$stkcd %in% unique(df$stkcd)),]
 df <- within(df, yearqtr <- paste(year,quarter,sep="_"))
 stkcd <- fread("/idx/idx_file.csv")
+stkcd <- stkcd[1:1000,]
 full_R2 <- data.frame()
 df_list <- list()
     for(j in 1:dim(stkcd)[1]){
@@ -25,7 +26,7 @@ df_list <- list()
         cash_flow_corr <- lm(ocf_lag_mc.x ~ ocf_lag_mc.y, data = reg_df)
         stkcd_R2[i,5] <- summary(cash_flow_corr)$adj.r.squared
       }
-      full_R2 <- rbind(full_R22, stkcd_R2)
+      full_R2 <- rbind(full_R2, stkcd_R2)
     }
 setwd("/data")
 fwrite(full_R2,"R2_cash_flow.csv",row.names = F)
