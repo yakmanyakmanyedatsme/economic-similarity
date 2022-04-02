@@ -16,7 +16,7 @@ RUN mkdir -p /usr/local/gcloud \
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-RUN echo {\
+RUN echo "{\
   "type": "service_account",\
   "project_id": "quantum-ether-337220",\
   "private_key_id": "de8051e4aa9572db455b6936479e7ca26991ddbe",\
@@ -39,7 +39,7 @@ RUN echo {\
   "token_uri": "https://oauth2.googleapis.com/token",\
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",\
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quantum-ether-337220%40appspot.gserviceaccount.com"\
-} > credential_key.json
+}" > credential_key.json
 
 RUN gcloud auth activate-service-account --key-file=credential_key.json
 RUN gcloud config set project quantum-ether-337220
