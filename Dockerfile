@@ -1,14 +1,10 @@
 # from instruction specifies the parent image 
 FROM nuest/mro
 
-#ARG WHEN
-
-RUN R -e "options(repos = `
-	list(CRAN='http://mran.revolutionanalytics.com/snapshot/2022-04-01')); `
-	install.packages(tidyverse);`
-	install.packages(data.table);`
-	install.packages(dplyr);`
-	install.packages(haven)"
+RUN R -e install.packages(tidyverse)
+RUN R -e install.packages(data.table)
+RUN R -e install.packages(dplyr)
+RUN R -e install.packages(haven)
 
 RUN mkdir data
 RUN mkdir data/idx
