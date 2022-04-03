@@ -16,7 +16,7 @@ RUN mkdir -p /usr/local/gcloud \
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-echo '{
+RUN echo '{\
   "type": "service_account",\
   "project_id": "quantum-ether-337220",\
   "private_key_id": "29d2f175f4ca8be6c574864be1d455ec0d1e558b",\
